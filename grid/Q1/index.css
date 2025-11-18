@@ -1,0 +1,52 @@
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 20px;
+            
+        }
+        .container div{
+            text-align: center;
+            padding: 20%;
+            font-size: 30px;
+            font-weight: 500;
+            
+        }
+        .item1{
+            background-color: rgb(253, 76, 12);
+            color: white;
+        }
+        .item2{
+            background-color: rgb(76, 12, 253);
+            color: white;
+        }
+        .item3{
+            background-color: rgb(249, 253, 12);
+            color: white;
+        }
+        .item4{
+            background-color: rgb(205, 12, 253);
+            color: white;
+        }
+        .item5{
+            background-color: rgb(19, 228, 29);
+            color: white;
+        }
+        .item6{
+            background-color: rgb(12, 157, 253);
+            color: white;
+        }
+        .item7{
+            background-color: rgb(228, 85, 85);
+            color: white;
+        }
+        .item8{
+            background-color: rgb(12, 225, 253);
+            color: white;
+        }
+        .item9{
+            background-color: rgb(95, 30, 6);
+            color: white;
+        }
+    
