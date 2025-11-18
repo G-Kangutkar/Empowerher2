@@ -1,0 +1,85 @@
+
+        body{
+            padding: auto;
+            margin: auto;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            margin-left: 500px;
+            margin-top: 20px;
+            align-items: center;
+            width: 300px;
+            height: 400px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            
+          
+        }
+        .main > div{
+             width: 300px;
+            height: 50px;
+            border-radius: 10px;
+        }
+         h2{
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+            color: rgb(16, 161, 154);
+            font-size: 25px;
+            
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width: 300px;
+            height:280px ;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            
+
+        }
+        
+        .input{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-sizing: border-box;
+            width: 90%;
+            height: 60%;
+            margin: 10px;
+            color: white;
+        }
+        .num{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 50px;
+            height: 40px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+            gap: 10px;
+            margin: 10px;
+            font-weight: bold;
+            
+            
+        }
+        .unit, .cal{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 50px;
+            height: 40px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+            gap: 10px;
+            font-weight: bold;
+            padding-top: 15px;
+        }
+        .unit{
+            background-color: black;
+            color: white;
+        }
+        .cal{
+            background-color: red;
+            color: white;
+           
+        }
+   
