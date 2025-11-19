@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Web Developer</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">John Developer</div>
+                <!-- Using checkbox for CSS-only hamburger menu -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <nav class="nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Pure CSS typing animation without JavaScript -->
+                <h1 class="hero-headline">
+                    <span class="typing-text">Hi, I'm a Web Developer</span>
+                    <span class="cursor"></span>
+                </h1>
+                <p class="hero-description">
+                    I'm a passionate web developer dedicated to creating beautiful, functional, and user-friendly digital experiences. 
+                    Let's build something amazing together!
+                </p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                With expertise in modern web technologies, I transform ideas into elegant solutions. 
+                I specialize in building responsive, accessible, and performant web applications 
+                that deliver exceptional user experiences.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <!-- HTML -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#E34C26" width="100" height="100" rx="10"/>
+                            <path fill="#fff" d="M20 80h60L55 20H25L20 80M35 50h30v10H35z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">HTML</h3>
+                    <p class="skill-desc">Semantic markup & accessibility</p>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#1572B6" width="100" height="100" rx="10"/>
+                            <path fill="#fff" d="M20 80h60L55 20H25L20 80M35 50h30v10H35z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">CSS</h3>
+                    <p class="skill-desc">Responsive design & animations</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#F7DF1E" width="100" height="100" rx="10"/>
+                            <path fill="#000" d="M30 30h40v40H30z M50 50h20v20H50z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <p class="skill-desc">Interactive & dynamic content</p>
+                </div>
+
+                <!-- Angular JS -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#E23237" width="100" height="100" rx="10"/>
+                            <path fill="#fff" d="M50 20L30 70h12l4-12h18l4 12h12L50 20m0 20l6 20h-12l6-20z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Angular JS</h3>
+                    <p class="skill-desc">Framework & SPA development</p>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#3776AB" width="100" height="100" rx="10"/>
+                            <path fill="#FFD43B" d="M30 50c0-10 10-15 20-15s15 5 15 15v10c0 10-5 15-15 15s-20-5-20-15z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <p class="skill-desc">Backend & data processing</p>
+                </div>
+
+                <!-- Django -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#092E20" width="100" height="100" rx="10"/>
+                            <path fill="#fff" d="M35 25h20v50H35z M50 35h15v40H50z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Django</h3>
+                    <p class="skill-desc">Web framework & databases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="footer-text">Feel free to reach out through any of these platforms.</p>
+            
+            <div class="social-links">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#0077B5" width="24" height="24" rx="2"/>
+                        <path fill="#fff" d="M8 9v8H5V9h3m-1.5-2a1.5 1.5 0 110-3 1.5 1.5 0 010 3m10 5v4.5h-3V12c0-.8-.3-1.3-1-1.3-.5 0-.9.3-1 .7-.1.1-.1.3-.1.5v5.1h-3V9h3v1.2c.3-.5.9-1.2 2.2-1.2 1.6 0 2.8 1 2.8 3.2z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#1A2A4F" width="24" height="24" rx="2"/>
+                        <path fill="#fff" d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.1 6.8 9.4.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.2 1 2.8.8.1-.6.3-1 .6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 .9-2.7-.1-.2-.4-1.1.1-2.3 0 0 .7-.2 2.4.9.7-.2 1.4-.3 2.2-.3.7 0 1.5.1 2.2.3 1.7-1.1 2.4-.9 2.4-.9.5 1.2.2 2.1.1 2.3.5.7.9 1.6.9 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5 3.9-1.3 6.8-5 6.8-9.4 0-5.5-4.5-10-10-10z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:hello@example.com" class="social-link" title="Email">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect fill="#F7A5A5" width="24" height="24" rx="2"/>
+                        <path fill="#1A2A4F" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M20 6l-8 5-8-5v12h16V6z"/>
+                    </svg>
+                    <span>Email</span>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Personal Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

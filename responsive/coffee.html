@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            padding: 3%;
+            padding-left: 5%;
+            margin: 3%;
+            gap: 20px;
+            background-color: rgb(245, 230, 236);
+        }
+        .card{
+            box-shadow: rgba(100, 100,111, 0.2)0px 7px 29px 0px;
+            background-color: white;
+            color: black;
+            width: 100%;
+            max-width: 300px;
+            min-height: 100px;
+            padding: 3%;
+            border-radius: 15px;
+        }
+       .card>div{
+        display: flex;
+        padding-left: 5%;
+        margin-bottom: 0;
+       }
+       .card>div h3{
+        color: goldenrod;
+       margin-left: auto;
+       
+       }
+       p{
+        font-weight: 100;
+        color: rgb(129, 126, 126);
+        padding-left: 5%;
+        margin-top: 0;
+       }
+       @media(max-width:768px){
+         .container{
+            grid-template-columns: repeat(2,1fr);
+            
+        }
+       .card>div{
+        flex-wrap: wrap;
+        
+       }
+       }
+       @media(max-width:320px){
+         .container{
+            grid-template-columns:1fr;
+            padding: 2%;
+            padding-left: 1%;
+            margin: 2%;
+            font-size: 80%;
+            
+        }
+         .card{
+            width: 100%;
+            max-width: 230px;
+            min-height: 50px;
+            padding: 3%;
+            border-radius: 15px;
+            margin-left: 7%;
+        }
+       .card>div{
+        flex-wrap: wrap;
+        
+       }
+       }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div>
+                <h2>Cappuccino</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Americano</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Espresso</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Macchiato</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Mocha</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Coffee Latte</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Plccolo Latte</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Ristretto</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+         <div class="card">
+            <div>
+                <h2>Affogato</h2>
+            <h3>$49</h3>
+        </div>
+            <p>Usage of the internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+    </div>
+</body>
+</html>
