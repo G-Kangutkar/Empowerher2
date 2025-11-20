@@ -22,13 +22,11 @@
 
 ## Images
 
-![This is an alt text.](AI-protfolio\bigScreen.png "This is a sample image.")
+![This is an alt text.](./bigScreen.png "This is a sample image.")
 
-![This is an alt text.](AI-protfolio\mediumScreen.png "This is a sample image.")
+![This is an alt text.](./mediumScreen.png "This is a sample image.")
 
-![This is an alt text.](AI-protfolio\mobileScreen.png "This is a sample image.")
+![This is an alt text.](./mobileScreen.jpeg "This is a sample image.")
 
-## Links
 
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
 
