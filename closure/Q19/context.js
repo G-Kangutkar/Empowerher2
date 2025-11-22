@@ -10,3 +10,6 @@ function changeAge(age){
     console.log(age)
 }
 changeAge()
+
+
+
