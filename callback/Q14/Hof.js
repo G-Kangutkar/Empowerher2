@@ -1,17 +1,13 @@
 function evaluation(employee){
     const performance = employee.filter(task => task.tasksCompleted>5);
-    console.log(performance);
-    const emplo = performance.map(person => {
-        if(person.rating > 4.5){
-            return ` name: ${person.name}, `, performancelevel ="Excellent" ;
-        }else if(person.rating<4.5 && person.rating>3){
-            return ` name: ${person.name},`, performancelevel="Good" 
-        }
-        else{
-            return ` name: ${person.name} `, performancelevel="Need Improvements"
-        }
-    } );
-    console.log(emplo)
+    //console.log(performance);
+    const emplo = performance.map(person => ({
+        name:person.name,
+        performance:person.rating>4.5?"Excellent"
+                   :person.rating>=3?"Good"
+                   :"Need Improvements" })
+);
+    //console.log(emplo)
     const performancepriority ={
         'Excellent': 1,
         'Good':2,
