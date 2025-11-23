@@ -144,7 +144,7 @@
 
 {
     const sum=(a,b)=>a+b;
-    console.log(2,6)
+    console.log(sum(2,6))
 
     const isAdult=(age)=>age>=18?"true":"false";
     console.log(isAdult(32))
@@ -163,7 +163,7 @@
     const obj={name:'Charles',age:26}
     const obj2 = {age:27, city:'Monaco'}
     const obj3= {...obj,...obj2}
-    console.log(obj)
+    console.log(obj3)
 
 
 }
