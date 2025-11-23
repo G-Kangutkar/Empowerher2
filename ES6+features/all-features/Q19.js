@@ -54,7 +54,7 @@
 // Destructuring & Optional Chaining
 {
     const arr = [10, 20, 30];
-    const [a,b]= [10,20,]
+    const [a,b,]= arr
     console.log(a,b)
 
     const laptop = { brand: "Dell", ram: "8GB" };
