@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            justify-content: center;
+            padding: 1%;
+            margin: 2%;
+        }
+        body{
+            padding-left: 35%;
+        }
+        #inputText{
+            padding: 1.2%;
+            border: 1px solid black;
+            background-color: rgb(221, 214, 214);
+            color: black;
+            justify-items: left;
+            border-radius: 8px;
+        }
+        .add{
+            background-color: rgb(144, 17, 148);
+            padding: 1%;
+            color: antiquewhite;
+            font-weight: 700;
+            border-radius: 12px;
+            margin: 0;
+        }
+        li{
+            
+            padding: 0.3%;
+            gap: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Enter the Task">
+    <button class="add">Add Task</button>
+    <ul id="taskList"></ul>
+   
+</body>
+<script>
+    const input = document.getElementById("inputText")
+    const btnTask = document.querySelector(".add")
+    const list = document.getElementById("taskList")
+  
+
+    function addTask(){
+        const tasks = input.value.trim()
+        if(tasks === ''){
+            alert("Enter the task");
+            return;
+        }
+        const li = document.createElement("li")
+        const span = document.createElement("span")
+        span.textContent = tasks
+        span.style.fontWeight='bold'
+        li.appendChild(span)
+
+        const completeBtn = document.createElement('button')
+        completeBtn.textContent = "Complete"
+        completeBtn.style.backgroundColor="green"
+        completeBtn.style.fontWeight='bold'
+        completeBtn.style.color = 'white'
+        completeBtn.addEventListener('click',function(){
+            li.style.textDecoration ='line-through'
+
+
+        })
+
+        const deleteBtn = document.createElement('button')
+        deleteBtn.textContent = 'Delete'
+        deleteBtn.style.backgroundColor ='red'
+        deleteBtn.style.fontWeight='bold'
+        deleteBtn.style.color = 'white'
+        deleteBtn.addEventListener('click', ()=>{
+            li.remove()
+        })
+ 
+        li.appendChild(completeBtn)
+        li.appendChild(deleteBtn)
+        list.appendChild(li)
+       
+    }
+     btnTask.addEventListener('click',addTask)
+</script>
+</html>

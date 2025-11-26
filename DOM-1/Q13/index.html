@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 1%;
+            margin: 1%;
+            font-size: medium;
+
+
+        }
+        div{
+            text-align: center;
+            font-size: larger;
+        }
+        .container{
+            align-items: left;
+           border: 1px solid black;
+
+        }
+    button{
+        padding: 1%;
+        font-weight: 600;
+        font-size: small;
+        background-color: rgb(75, 75, 196) ;
+        color: beige;
+
+    }
+    #click{
+        background-color: rgb(44, 172, 51) ;
+        color: rgb(20, 20, 20);
+    }
+
+    </style>
+</head>
+<body>
+    <div>Welcome, This is original text</div>
+    <div class="container">
+    
+    <label for="text">Enter text: </label><input id="textfield"  type="text"><br>
+    <label for="color">Enter color name: </label>
+    <input id="colorIp" type="text"><br>
+    
+    <button onclick="changingBackground()">Change Background</button> &emsp;&emsp;&emsp;&emsp;
+    <button id="click" onclick="UpdatingText()">Update Text</button>
+    </div>
+</body>
+<script>
+    function changingBackground(){
+        const texts = document.querySelector("div")
+        //console.log(texts)
+        const updatedColor = document.querySelector("#colorIp")
+         color = updatedColor.value
+        console.log(color)
+        texts.style.backgroundColor =color
+    }
+    function UpdatingText(){
+        const divs = document.querySelector("div")
+        const oldtext = document.querySelector("#textfield")
+        const newtext = oldtext.value
+        divs.textContent = newtext
+
+    }
+</script>
+</html>
