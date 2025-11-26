@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Chilli</li>
+        <li>Potato</li>
+        <li>Tomato</li>
+    </ul>
+    <button >Add Item</button>
+</body>
+<script>
+    let button = document.querySelector("button")
+    button.addEventListener("click",function(){
+    const item = document.querySelector("ul")
+    const newitem = document.createElement('li') 
+    newitem.textContent = "New Item"
+    const index = item.children.length
+    if(index%2==0){
+        newitem.style.color ="red"
+        newitem.style.fontStyle = "italic"
+    }else{
+        newitem.style.color ="blue"
+         newitem.style.fontWeight = "bold"
+    }
+    item.appendChild(newitem)
+    })
+   
+</script>
+</html>
