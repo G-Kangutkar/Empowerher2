@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debugging Task</title>
+</head>
+<body>
+  <p id="message">Original Message</p>
+  <button id="textButton">Change Text</button>
+  <br><br>
+  <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+  <button id="colorButton">Change Background</button>
+
+  <script>
+    // JavaScript code with bugs
+    //fixed typo in id name of p element.
+    const para = document.querySelector('#message'); // Incorrect id
+    // fixed correct get method to select button by its id
+    const textButton = document.getElementById('textButton'); // Incorrect method
+    // fixed to correct name for calling event listener and added the event action name "click"
+    textButton.addEventListener("click", () => { // Incorrect method name
+        // fixed to correct property name
+      para.textContent = 'New Message'; // Incorrect property
+    });
+
+    const box = document.getElementById('box');
+    const colorButton = document.getElementById('colorButton');
+    colorButton.addEventListener('click', () => {
+        // fixed typo in style
+      box.style.backgroundColor = 'blue'; // Typo in 'style'
+    });
+  </script>
+</body>
+</html>
+
