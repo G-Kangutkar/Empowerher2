@@ -49,20 +49,34 @@
     </div>
 </body>
 <script>
+    
     function changingBackground(){
         const texts = document.querySelector("div")
         //console.log(texts)
         const updatedColor = document.querySelector("#colorIp")
-         color = updatedColor.value
-        console.log(color)
-        texts.style.backgroundColor =color
+        const color = updatedColor.value
+        
+        if(isValid(color)==true){
+            texts.style.backgroundColor =color
+        }else{
+            alert('invalid color')
+        }
+        
     }
     function UpdatingText(){
         const divs = document.querySelector("div")
         const oldtext = document.querySelector("#textfield")
         const newtext = oldtext.value
+        if(newtext == ''){
+            alert("Enter the Text")
+        }
         divs.textContent = newtext
 
+    }
+    function isValid(color){
+       const temp = document.createElement('div')
+       temp.style.color = color;
+       return temp.style.color !==''
     }
 </script>
 </html>
