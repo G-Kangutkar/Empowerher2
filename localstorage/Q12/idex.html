@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="add">Add Paragraph</button>
+    <button id="remove">Delete last paragraph</button>
+    <div class="container"></div>
+</body>
+<script>
+    const content = [];
+    //adding para
+    //getting button by getElementById method also adding addEventListener to that button.
+   
+    document.getElementById('add').addEventListener('click',()=>{
+        // obj that holds thinks that we want to add 
+        const para= {
+             // selecting para that was going to add after pressing add button.
+            show:document.querySelector('.card')
+        }
+        // pushing every para into main array after clicking add
+        content.push(para)
+        // rendering recent content
+        renderCards(content)
+
+    })
+    //removing
+      //getting button by getElementById method also adding addEventListener to that button.
+   
+    document.getElementById('remove').addEventListener('click',()=>{
+         // selecting whole div that was going to store para.
+        let container=document.querySelector('.container')
+        // removing last para
+        container.removeChild(container.lastElementChild)
+        
+
+    })
+    //rendering
+    // selecting div where content want to be displayed.
+    const divs = document.querySelector(".container");
+    // creating rendering function
+    function renderCards(data){
+        // clearing html before rendering
+        divs.innerHTML='';
+        // going to each
+        data.forEach((el,index)=>{
+            // creating new element
+             const card = document.createElement('div');
+            //  assigning classname to it
+             card.className = 'card';
+            //  adding html content to it
+             card.innerHTML=`
+             <p>This is new paragraph</p>`
+            //  adding this to main div
+            divs.appendChild(card)
+        })
+       
+    }
+    // calling render function
+    renderCards(content)
+</script>
+</html>
