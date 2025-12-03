@@ -63,7 +63,7 @@
     // clear
     document.getElementById('clear').addEventListener('click',()=>{
         notes.length =0;
-        localStorage.removeItem(notes);
+        localStorage.removeItem("notes");
         renderCards(notes)
     })
 
