@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border: 1px solid black;
+            width: 520px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin: 5%;
+        }
+        body{
+           text-align: start;
+           /* justify-items: center; */
+           
+        }
+        #redirect{
+            padding: 1%;
+            background-color: rgb(12, 136, 12);
+            color: white;
+            border-radius:10px ;
+            width: 100px;
+            margin: 2%;
+            margin-left: 40%;
+            
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            /* padding: 1%; */
+            /* margin: 2%; */
+            margin-top: 4%;
+            gap: 5px;
+            font-size: medium;
+            padding-left: 0;
+
+        }
+        #form{
+            display: flex;
+            /* flex-wrap: wrap; */
+            flex-direction: column;
+            width: 150px;
+            height: 5px;
+            padding-left: 35%;
+           padding-bottom: 33%;
+            align-items: center;
+            justify-items: center;
+            align-items: center;
+            text-align: center; 
+
+        }
+        input{
+            width: 200px;
+            height: 25px;
+        }
+        .card{
+           
+            height: 220px;
+            width: 300px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+            margin: 10px;
+        
+
+        }
+        #sortByA, #sortByB{
+           background-color: crimson;
+           color: azure;
+           padding: 2%;
+           font-weight: 500;
+           border-radius: 5px;
+           /* width: 100%; */
+           width: 100px;
+           
+
+        }
+        #filter{
+            border-radius:10px ;
+            width: 100px;
+            margin: 2%;
+            margin-left: 20%;
+        }
+        .sort{
+            display: flex;
+            gap: 10px;
+            align-items: end;
+            margin-right: 0;
+            /* padding-left: 70%; */
+            justify-content: center;
+
+            
+        }
+        #add{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgb(7, 67, 122);
+            color: white;
+            font-weight: 500;
+        }
+        img{
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            padding-left: 35%;
+            padding-top: 5px;
+        }
+        .foot{
+            display: flex;
+            gap: 0;
+            justify-items: center;
+            justify-content: baseline;
+        }
+        #category{
+            width: 150px;
+            height: 30px;
+        }
+        #filter{
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+     <button id="redirect">Home</button>
+    <div id="form">
+     <form id="bookForm" >
+        <input type="text" id="title" placeholder="Enter Title"><br><br>
+        <input type="text" id="author" placeholder="Enter Author"><br><br>
+        <select id="category">
+            <option value="fiction">Fiction</option>
+            <option value="comedy">Comedy</option>
+            <option value="technical">Technical</option>
+        </select><br><br>
+        <button type="submit" id="add">Add Book</button>
+     </form>
+     </div>
+     
+     <div class="foot">
+     <select id="filter">
+            <option value="">All</option>
+            <option value="fiction">Fiction</option>
+            <option value="comedy">Comedy</option>
+            <option value="technical">Technical</option>
+        </select>
+          <div class="sort"> 
+        <button id="sortByA"> Sort: A to Z</button>
+     <button id="sortByB">Sort: Z to A</button>
+     </div>
+     </div>
+     <div class="container"></div>
+</div>
+</body>
+<script>
+    const book = []
+    const redirect = document.getElementById("redirect")
+    //console.log(redirect)
+    redirect.addEventListener('click',()=>{
+        window.location.assign("home.html");
+    })
+    const imageUrl = "https://m.media-amazon.com/images/I/71ZB18P3inL._SY522_.jpg"
+    //add book
+    document.getElementById('bookForm').addEventListener('submit',(event)=>{
+        event.preventDefault();
+
+        let list = {
+            title: document.getElementById('title').value,
+            author: document.getElementById('author').value,
+            category: document.getElementById('category').value,
+            imageUrl
+
+        }
+        book.push(list)
+        renderCards(book)
+    })
+
+    //sorting
+     document.getElementById('sortByA').addEventListener('click',()=>{
+        book.sort((a,b)=>a.title.localeCompare(b.title))
+        renderCards(book)
+     })
+      document.getElementById('sortByB').addEventListener('click',()=>{
+        book.sort((a,b)=>b.title.localeCompare(a.title))
+        renderCards(book)
+     })
+
+     //filtering
+     document.getElementById('filter').addEventListener('change',()=>{
+        const category = document.getElementById('filter').value;
+        if(category == ''){
+            renderCards(book)
+        }else{
+            let filteredBook = book.filter(books=> books.category === category)
+            renderCards(filteredBook)
+        }
+     })
+
+
+    //rendering
+    const container = document.querySelector(".container");
+    function renderCards(data){
+        container.innerHTML =" ";
+        data.forEach((list,index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML=`
+            <img src=${list.imageUrl}>
+            <h4>Title: ${list.title}</h4>
+            <p>Author: ${list.author}</p>
+            <p>Category: ${list.category}</p>
+            
+            
+            `
+
+            container.appendChild(card)
+        })
+    }
+    renderCards(book)
+
+</script>
+</html>

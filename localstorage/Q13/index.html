@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Make Notes</h2>
+    <input type="text" id="inputText" placeholder="Enter Your Notes here" required>
+    <button id="add">Load Notes</button>
+    <button id="clear">Clear Notes</button>
+    <div class="container"></div>
+</body>
+<script>
+    let notes = [];
+    const saved = localStorage.getItem('notes');
+    if(saved){
+        try{
+            notes = JSON.parse(saved);
+        } catch{
+            notes = [];
+        }
+    }
+    
+  
+     
+    
+    //adding notes
+    document.getElementById('add').addEventListener('click',()=>{
+        const note = {
+            text:document.getElementById("inputText").value
+
+        }
+        notes.push(note)
+        saveData()
+        renderCards(notes)
+        document.getElementById("inputText").value='';
+    })
+
+    // rendering notes
+    const container = document.querySelector(".container");
+    function renderCards(data){
+        // clear before display
+        container.innerHTML='';
+        data.forEach((ele,index)=>{
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML=`
+            <p>${ele.text}</p>
+            `
+            container.appendChild(card)
+        })
+
+    }
+    renderCards(notes)
+    // saving notes
+    function saveData(){
+        // const notes = JSON.parse(localStorage.getItem('notes')) || [];
+        // const note=document.getElementById("inputText").value
+        localStorage.setItem('notes', JSON.stringify(notes))
+    }
+    // clear
+    document.getElementById('clear').addEventListener('click',()=>{
+        notes.length =0;
+        localStorage.removeItem(notes);
+        renderCards(notes)
+    })
+
+</script>
+</html>
