@@ -21,6 +21,7 @@ document.getElementById('addTask').addEventListener('click', () => {
     List.push(tasks);
     saveData();
     renderCards(List);
+    document.getElementById('newTask').value='';
 })
 
 function saveData() {
@@ -45,6 +46,13 @@ function removeTask(id) {
     renderCards(List)
 }
 
+// searching
+const searchInput = document.querySelector('#searchInput');
+searchInput.addEventListener('input',()=>{
+    const value = searchInput.value.toLowerCase();
+    const filtered = List.filter(item => item.task.toLowerCase().includes(value));
+    renderCards(filtered)
+})
 
 
 //rendering
