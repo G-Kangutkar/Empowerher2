@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Form -->
+        <div class="sidebar">
+            <h2>Add New Book</h2>
+            <form id="bookForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <input type="number" id="price" placeholder="Price" step="0.01" required>
+                <input type="url" id="image" placeholder="Image URL" required>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+        <div class="books" id="booksList"></div>
+    </div>
+
+</body>
+<script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getFirestore, collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+    // STEP 1: Replace with your Firebase config
+    const firebaseConfig = {
+        apiKey: "AIzaSyCJcxPkUI-fQMvVOuDbB2uE3AiMIma82eE",
+        authDomain: "book-management-b5ab8.firebaseapp.com",
+        projectId: "book-management-b5ab8",
+        storageBucket: "book-management-b5ab8.firebasestorage.app",
+        messagingSenderId: "951552866170",
+        appId: "1:951552866170:web:7d01153e032e9f722088c3",
+        measurementId: "G-SQXN11PSK4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    let updateBookId = null;
+
+    // Load books in realtime
+    onSnapshot(collection(db, 'books'), (snapshot) => {
+        const booksList = document.getElementById('booksList');
+        booksList.innerHTML = '';
+
+        snapshot.forEach((doc) => {
+            const book = doc.data();
+            booksList.innerHTML += `
+                    <div class="card">
+                        <img src="${book.coverImageURL}" alt="${book.title}">
+                        <div class="card-body">
+                            <h3>${book.title}</h3>
+                            <p>${book.author}</p>
+                            <p class="price">$${book.price}</p>
+                            <div class="actions">
+                                <button class="btn-update" onclick="openUpdate('${doc.id}', '${book.author}')">Update</button>
+                                <button class="btn-delete" onclick="deleteBook('${doc.id}')">Delete</button>
+                                <button class="btn-view" onclick="viewBook('${book.title}', '${book.author}', ${book.price}, '${book.coverImageURL}')">View</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        });
+    });
+
+
+
+
+
+</script>
+
+</html>
