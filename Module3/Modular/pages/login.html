@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome, Login here</h1>
+    <div>
+        <input id="email" type="email" placeholder="Enter Your Email Id" required><br>
+        <input id="pass" type="password" placeholder="Enter your password" required><br>
+        <button onclick="submit()">Submit</button>
+    </div>
+</body>
+<script>
+
+    function submit() {
+        email = document.getElementById('email').value;
+        password = document.getElementById('pass').value;
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        console.log(users)
+
+        // Find user
+        const user = users.find(u => u.email === email && u.password === password);
+
+
+        if (user) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            window.location.href = 'todos.html';
+        }
+        else {
+            messageDiv.textContent = 'Invalid email or password';
+            messageDiv.className = 'message error';
+            messageDiv.style.display = 'block';
+        }
+    }
+</script>
+
+</html>

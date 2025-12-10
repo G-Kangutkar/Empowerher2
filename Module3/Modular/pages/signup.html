@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+            <input id="email" type="email" placeholder="Enter Your Email Id" required ><br>
+            <input id="pass" type="password" placeholder="Enter your password" required><br>
+            <button onclick="submit()">Submit</button>
+        
+    </div>
+</body>
+<script>
+    let users = [];
+    
+    function submit(){
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const newUser = {
+                id: Date.now(),
+                email: document.getElementById('email').value,
+                password: document.getElementById('pass').value
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1500);
+    }
+     
+</script>
+</html>
