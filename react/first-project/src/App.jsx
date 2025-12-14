@@ -5,7 +5,7 @@ import './App.css'
 import FirstComponent from './FirstComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
    
