@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Component1 from './Component/Component1'
 
@@ -14,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div style={{ border: '1px solid black', backgroundColor: "#6432d9ff" }} >
         <Component1 a={a} b={b} c={c} d= {d} e={e} f={f}/>
       </div>
       
