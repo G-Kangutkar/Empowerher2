@@ -1,8 +1,10 @@
 import { createContext, useState } from "react";
 
+
 const PostContext = createContext();
 export const PostProvider=({children})=>{
-    const[ posts, setPosts]= useState([]);
+    const [posts, setPosts]=useState([]);
+    
     const readPost =()=>{
         setPosts()
     }

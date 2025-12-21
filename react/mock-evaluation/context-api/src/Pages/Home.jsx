@@ -4,38 +4,29 @@ import { useEffect, useState } from "react";
 
 function Home(){
 
-    const [data, setData]=useState([]);
-    const [ error, setError]= useState(null);
+    
+    const [posts, setPosts]=useState([]);
 
 
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => {
-            if(!response.ok){
-                throw new Error('failed to load');
-            }
-            return response.json()
-        }   
+        .then(response =>  response.json()
+          
         )
         .then(data => 
-            setData(data.slice(0,20)))
-        .catch(err=> 
-            setError(err.message)
+            setPosts(data.slice(0,20)))
+        .catch(error=> 
+            console.error('failed to load')
         )
     },[])
 
-    if(error){
-        return( <div>error:{error}</div>
-
-        )
-    }
 
     return(
         <>
         <div>
-        <h2>ID: {data.id}</h2>
-        <p>Title: {data.title}</p>
-        <p>Body: {data.body}</p>
+        <h2>ID: {posts.id}</h2>
+        <p>Title: {posts.title}</p>
+        <p>Body: {posts.body}</p>
         </div>
 
         
