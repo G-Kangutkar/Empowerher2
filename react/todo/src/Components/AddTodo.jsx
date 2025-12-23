@@ -1,16 +1,17 @@
 import { useState, useContext } from "react";
-import TodoContext from "../TodoContext";
+
+import TodoContext from "../Todos";
 
 function AddTodo(){
-    const [text, setText]=useState('');
+    const [title, setText]=useState('');
     const {addTodo} = useContext(TodoContext);
     const handleTodo=()=>{
-        addTodo(text);
+        addTodo(title);
         setText('');
     }
     return(
         <>
-        <input type="text" placeholder="Enter Task" value={text} onChange ={(e)=>setText(e.target.value)}/>
+        <input type="text" placeholder="Enter Task" value={title} onChange ={(e)=>setText(e.target.value)}/>
         <button onClick={handleTodo}>Add</button>
         </>
     )

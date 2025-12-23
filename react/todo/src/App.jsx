@@ -1,8 +1,9 @@
 
 import './App.css'
-import { TodoProvider } from './TodoContext'
+
 import AddTodo from './Components/AddTodo'
 import TodoList from './Components/TodoList'
+import { TodoProvider } from './Todos'
 
 function App() {
   
@@ -10,10 +11,15 @@ function App() {
   return (
     <>
       <div>
+
         <TodoProvider>
           <AddTodo/>
           <TodoList/>
         </TodoProvider>
+        {/* <TodoProvider>
+          <AddTodo/>
+          <TodoList/>
+        </TodoProvider> */}
         
       </div>
       
