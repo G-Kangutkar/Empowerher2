@@ -1,0 +1,32 @@
+input{
+    background-color: burlywood;
+    color: black;
+    font-size: medium;
+    padding: 15px;
+    margin: 10px;
+
+
+}
+button{
+   font-size: medium;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(16, 16, 143);
+    color: beige;
+}
+.main{
+    margin: 30px;
+    height: 400px;
+    background-color: antiquewhite;
+    padding-left: 35%;
+    justify-content: center;
+    padding-top: 50px;
+
+}
+.container{
+    max-width: fit-content;
+    background-color: rgb(189, 59, 85);
+    padding: 40px;
+    margin: 10px;
+   
+}
