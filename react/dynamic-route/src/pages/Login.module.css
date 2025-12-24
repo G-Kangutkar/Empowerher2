@@ -10,9 +10,10 @@ input{
 button{
    font-size: medium;
     padding: 15px;
-    margin: 10px;
+    margin-left: 38%;
     background-color: rgb(16, 16, 143);
     color: beige;
+    
 }
 .main{
     margin: 30px;
@@ -26,7 +27,7 @@ button{
 .container{
     max-width: fit-content;
     background-color: rgb(189, 59, 85);
-    padding: 40px;
+    padding: 37px;
     margin: 10px;
    
 }

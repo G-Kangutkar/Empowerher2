@@ -37,13 +37,13 @@ function Todos (){
         <>
 
             <div>
-                <h2>Todos</h2>
-                <button onClick={handleLogout}>Logout</button>
-                <div>
+                <h2 style={{textAlign:'center'}}>Todos</h2>
+                <button style={{marginLeft: "47%"}} onClick={handleLogout}>Logout</button>
+                <div style={{backgroundColor:'#d1a8a8ff', padding:'20px', margin:'10px'}}>
                     {
                         todos.map((todo)=>
                         <Link key={todo.id} to={`/todos/${todo.id}`}>
-                            {todo.title}-{todo.completed?"true":'false'}
+                            {todo.title}-{todo.completed?"true":'false'} <br /> <br />
                         </Link>
                         
                         
