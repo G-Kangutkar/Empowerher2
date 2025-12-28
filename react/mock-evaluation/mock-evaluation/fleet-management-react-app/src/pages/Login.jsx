@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 
 function Login(){
     const [email, setEmail]=useState('');
@@ -7,27 +8,17 @@ function Login(){
     const [isLogin,setIsLogin]=useState(false);
     const loginRef=useRef(null);
     const navigate = useNavigate();
+    const {Login} =useAuth();
 
-    useEffect(()=>{
-        const saved =localStorage.getItem('isLoggedIn')
-        if(saved){
-            setIsLogin(true);
-        }
-        
-        
-    },[]);
-
-    const handleLogin = (email,password)=>{
-        if(email === 'admin@gmail.com' && password === 'admin1234'){
-            alert('Login Success');
-            setIsLogin(true);
-            localStorage.setItem('isLoggedIn','true');
+    
+    const handleLogin = ()=>{
+        if(Login(email,password)){
             navigate('/admin')
-
+    
+    }else{
+            alert('Wrong email or password')
 
         }
-        return alert('Wrong email or password')
-
     }
 
     return(
