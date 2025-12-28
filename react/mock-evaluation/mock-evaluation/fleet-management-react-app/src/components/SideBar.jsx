@@ -26,7 +26,7 @@ function SideBar(){
     return(<>
     
     <nav></nav>
-    <sidebar>
+   
         <form onSubmit={handleFormSubmit}>
             <input type="text" name="regNum" placeholder="Vehicle Registration Number" value={formData.regNum}  onChange={handleFormInput}/>
             <select name="category" value={formData.category} onChange={handleFormInput} >
@@ -44,7 +44,18 @@ function SideBar(){
               
 
         </form>
-    </sidebar>
+        <div>
+            {newRegistration.map(reg=>(
+                <div key={reg.id}>
+                    <p>Register Number: {reg.regNum}</p>
+                    <p>category Number: {reg.category}</p>
+                    <p>Driver Number: {reg.driverName}</p>
+                    <p>Available Number: {reg.isAvailable}</p>
+                </div>
+            ))}
+        </div>
+
+    
     <main></main>
     
     </>)
