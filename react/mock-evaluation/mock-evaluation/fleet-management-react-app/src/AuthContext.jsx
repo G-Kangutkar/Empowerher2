@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 export const useAuth=()=>useContext(AuthContext);
-export const AuthProvider=({children})=>{
+ const AuthProvider=({children})=>{
 
     const[isLoggedIn, setIsLoggedIn] =useState(false);
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ export const AuthProvider=({children})=>{
         
     },[]);
 
-    const Login = (email,password)=>{
+    const login = (email,password)=>{
         if(email === 'admin@gmail.com' && password === 'admin1234'){
             alert('Login Success');
             setIsLoggedIn(true);
@@ -29,10 +29,11 @@ export const AuthProvider=({children})=>{
 
     }
     return(
-        <AuthContext.Provider value={{Login,isLoggedIn}}>
+        <AuthContext.Provider value={{isLoggedIn, login}}>
             {children}
         </AuthContext.Provider>
     )
 
 
 }
+export default AuthProvider;
