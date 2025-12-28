@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 function SideBar(){
      
     const [formData, setFormData]= useState({
-        regNum:'', category:'',driverName:'', isAvailable:''
+        id:Date.now(),regNum:'', category:'',driverName:'', isAvailable:''
     })
     const handleFormInput = useCallback((e)=>{
         const {name,value}= e.target;
