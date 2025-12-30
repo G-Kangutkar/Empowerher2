@@ -48,17 +48,17 @@ function App() {
 
   return (
     <>
-    <div>
+    <div style={{padding:'15px',margin:'10px', textAlign:'center',backgroundColor:'#1c7e0fff', display:'flex'}}>
       <div>
         <form onSubmit={handleAddProduct}>
-          <input type="number" name='id' placeholder='Enter Id' value={formData.id} onChange={handleInputChange} />
-          <input type="text" name='name' placeholder='Enter Product name' value={formData.name} onChange={handleInputChange} />
-          <input type="number" name='price' placeholder='Enter price' value={formData.price} onChange={handleInputChange} />
-          <button type='submit'>Add Product</button>
+          <input style={{padding:'10px' , margin:'10px'}} type="number" name='id' placeholder='Enter Id' value={formData.id} onChange={handleInputChange} /> <br />
+          <input style={{padding:'10px' , margin:'10px'}} type="text" name='name' placeholder='Enter Product name' value={formData.name} onChange={handleInputChange} /> <br />
+          <input style={{padding:'10px' , margin:'10px'}} type="number" name='price' placeholder='Enter price' value={formData.price} onChange={handleInputChange} /> <br /> <br />
+          <button style={{backgroundColor:'#7e0f0fff', padding:'10px',margin:'2% 7%',fontWeight:'bolder', color:'white' }} type='submit'>Add Product</button>
         </form>
-        <h4>Total price: {total}</h4>
+        <h4 style={{padding:'10px' , margin:'10px'}}>Total price: {total}</h4>
+      
       </div>
-
       <div>
         {selectedproduct && (
           <div>
@@ -66,9 +66,13 @@ function App() {
             <p>{selectedproduct.name}-{selectedproduct.price}</p>
           </div>
         )}
-      </div>
-      <ProductList products={products}
+      </div >
+      <div >
+        <ProductList products={products}
         onProductSelect = {handleProductSelect}/>
+      </div>
+      
+    
     </div>
     </>
   )
