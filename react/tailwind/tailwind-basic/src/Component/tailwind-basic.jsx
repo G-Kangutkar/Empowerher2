@@ -2,7 +2,7 @@ function Basic(){
     return(
         <div>
             <nav >
-                <div class="flex flex-col md:flex-row gap-3 md:gap-4 p-3.5 bg-lime-300 ">
+                <div class="flex flex-col md:flex-row gap-3 md:gap-4 p-3.5 bg-lime-300 justify-center ">
                 <a href="#">Home</a>
                 <a href="#">Contact Us</a>
                 <a href="#">About Us</a>
@@ -11,8 +11,8 @@ function Basic(){
             </nav>
             <div className=" mt-5 mb-0">
                 <h2 class='sm:text-xl md:text-3xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-center'>Welcome </h2> <br />
-                <div class='w-100 h-100 ml-120 mb-0'>
-                    <img class='rounded-3xl shadow-lg hover:scale-105 mb-0' src="https://www.lot.com/content/dam/lot/lot-com/destination-photos/japonia/Tokyo-5%20.coreimg.82.1520.jpg/1723628368208/Tokyo-5%20.jpg" alt="" />
+                <div class='w-full h-auto mb-4 justify-center'>
+                    <img class='rounded-3xl shadow-lg hover:scale-105 max-w-full h-auto' src="https://www.lot.com/content/dam/lot/lot-com/destination-photos/japonia/Tokyo-5%20.coreimg.82.1520.jpg/1723628368208/Tokyo-5%20.jpg" alt="" />
                 </div>  
             </div>
             <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-0 '>
@@ -61,8 +61,8 @@ function Basic(){
                 
             </div>
             
-            <div className="flex items-center justify-center ">
-                <table className="border border-amber-400 p-16 m-10 ml-32">
+            <div className="flex items-center justify-center overflow-x--auto px-4 ">
+                <table className="border border-amber-400 p-4 m-4 ml-32 min-w-full">
                     <thead>
                         <tr className="bg-gray-600 text-blue-400">
                         <th className="border border-amber-400 p-2">Column 1</th>
@@ -98,12 +98,12 @@ function Basic(){
             </div>
             <div className="text-center flex items-center justify-center min-h-screenr">
                 
-                <form action="" className="bg-teal-500 p-5 m-8 w-130 text-center ">
+                <form action="" className="bg-teal-500 p-5 m-4 w-full max-w-md text-center shadow-lg ">
                     <h3 className="text-xl">Contact</h3>
-                    <input type="text" className=" border-2 m-2 pd-8 w-100  bg-amber-200"  placeholder="Enter Name"/>
-                    <input type="email" className=" border-2 m-2 pd-8 w-100  bg-amber-200"  placeholder="Enter Email"/>
-                    <input type="password" className=" border-2 m-2 pd-8 w-100  bg-amber-200"  placeholder="Enter Password"/> <br /> <br />
-                    <button class = 'rounded border p-0.5 bg-pink-500 hover:bg-pink-700 active:bg-pink-900 '>Submit</button>
+                    <input type="text" className=" border-2 m-2 pd-2 w-full  bg-amber-200"  placeholder="Enter Name"/>
+                    <input type="email" className=" border-2 m-2 pd-2 w-full  bg-amber-200"  placeholder="Enter Email"/>
+                    <input type="password" className=" border-2 m-2 pd-2 w-full   bg-amber-200"  placeholder="Enter Password"/> <br /> <br />
+                    <button class = ' mt-4 rounded border px-4 py-2 bg-pink-500 hover:bg-pink-700 active:bg-pink-900 text-white'>Submit</button>
                 </form>
             </div>
         </div>
