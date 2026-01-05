@@ -6,7 +6,7 @@ import { useState } from "react";
 function TodoDetails(){
     const {id} =useParams();
 
-    const {todo, getTodo, getTodoById} = todoService();
+    const { getTodoById} = todoService();
     const [todos,setTodos]=useState(null)
 
     useEffect(()=>{

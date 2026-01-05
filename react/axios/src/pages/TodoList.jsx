@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import todoService from "../api/todoService";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function TodoList(){
 
-    const {todo, getTodo, getTodoById} = todoService();
+    const {todo, getTodo } = todoService();
     
 
     useEffect(()=>{
