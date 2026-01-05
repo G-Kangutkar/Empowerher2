@@ -9,7 +9,11 @@ Currently, two official plugins are available:
 
 
 ## Output:
-<img width="1366" height="768" alt="Screenshot (337)" src="https://github.com/user-attachments/assets/6da2965e-c882-4a9f-a650-54194813f23e" /><img width="1366" height="768" alt="Screenshot (338)" src="https://github.com/user-attachments/assets/0a76d07a-f959-4218-bc8d-93daaf69f7d3" />
+<img width="1366" height="768" alt="Screenshot (337)" src="https://github.com/user-attachments/assets/6da2965e-c882-4a9f-a650-54194813f23e" />
+
+<img width="1366" height="768" alt="Screenshot (338)" src="https://github.com/user-attachments/assets/0a76d07a-f959-4218-bc8d-93daaf69f7d3" />
+
+
 <img width="1366" height="768" alt="Screenshot (339)" src="https://github.com/user-attachments/assets/34702c6a-25ec-406b-8f96-a1356613d062" />
 
 
