@@ -16,12 +16,16 @@ function Navbar() {
         return () => unsubscribe();
     }, []);
 
-    const handleLogout = async () => {
-        try {
-            await signOut(auth);
+   const handleAuthAction = async () => {
+        if (currentUser) {
+            try {
+                await signOut(auth);
+                navigate('/');
+            } catch (error) {
+                console.error('Failed to log out:', error);
+            }
+        } else {
             navigate('/');
-        } catch (error) {
-            console.error('Failed to log out:', error);
         }
     };
 
@@ -52,11 +56,11 @@ function Navbar() {
                     <option value="completed">Completed Todos</option>
                     <option value="pending">Pending Todos</option>
                 </select>
-                <Button
-                    onClick={handleLogout}
-                    className="bg-red-500 hover:bg-red-600"
+                 <Button
+                    onClick={handleAuthAction}
+                    className={currentUser ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'}
                 >
-                    Logout
+                    {currentUser ? 'Sign Out' : 'Sign In'}
                 </Button>
 
             </nav>
