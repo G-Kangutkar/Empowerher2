@@ -59,11 +59,11 @@ function Todos({todo}) {
    
     return (
         <div >
-            
+             <Navbar/>
            
             <div className="flex text-xl text-center m-4">
 
-                {/* <Navbar/> */}
+               
                 <aside className="bg-teal-200 w-90">
                    
                          <div className="space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto">

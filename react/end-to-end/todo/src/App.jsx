@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
 import Todos from './todo/todos'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
-          <Navbar/>
+          {/* <Navbar/> */}
                 <div className='min-h-screen'>
                   <Routes>
                   <Route path='/' element={<Login/>}/>
                   <Route path='/signup' element={<Signup/>}/>
-                  <Route path='/todos' element={<Todos/>}/>
+                  <Route path='/todos' element={<ProtectedRoute><Todos/></ProtectedRoute>}/>
                 </Routes>
                 </div>
               
