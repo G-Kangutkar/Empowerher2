@@ -13,7 +13,7 @@ import axiosService from "@/services/todo.service"
 import TodoList from "./TodoList"
 import Navbar from "@/components/Navbar"
 
-function Todos({filterData}) {
+function Todos({todo}) {
     const [task, setTask] = useState('');
     const { data, getData, addData, deleteData, updateData, toggle } = axiosService();
     const [editId,setEditId]=useState(false);
@@ -67,8 +67,14 @@ function Todos({filterData}) {
                 <aside className="bg-teal-200 w-90">
                    
                          <div className="space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto">
-                            <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{filterData?.task}</h3>
+                            <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{todo?.task}</h3>
                         </div> 
+                        {/* {filter === 'completed'? (filterData?.completed && filterData.task):(!filterData?.completed && filterData.task)} */}
+                        {data && data.map(todo=>(
+                            <div className="space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto" key={todo.id}>
+                            <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{todo?.task}</h3>
+                        </div> 
+                        ))}
                     
                 </aside>
                 <div className="grid grid-cols-1">
