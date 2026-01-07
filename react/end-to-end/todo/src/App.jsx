@@ -15,9 +15,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-            <Navbar/>
-              
-
+          
                 <div className='min-h-screen'>
                   <Routes>
                   <Route path='/' element={<Login/>}/>
