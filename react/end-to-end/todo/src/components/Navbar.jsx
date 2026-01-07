@@ -1,8 +1,29 @@
 import Todos from "@/todo/Todos";
 import { useState,useEffect } from "react"
 import axiosService from "../services/todo.service";
+import { signOut, onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase/firebaseConfig';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 function Navbar() {
     const {data}= axiosService();
+     const [currentUser, setCurrentUser] = useState(null);
+    const navigate = useNavigate();
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setCurrentUser(user);
+        });
+        return () => unsubscribe();
+    }, []);
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate('/');
+        } catch (error) {
+            console.error('Failed to log out:', error);
+        }
+    };
 
     const todo=data || [];
     
@@ -24,13 +45,19 @@ function Navbar() {
 
     return (
         <>
-            <nav className="p-5 m-3 bg-teal-600 text-white flex justify-between ">
+            <nav className="p-5 m-3 bg-teal-600 text-white flex justify-between items-center ">
                 <h3 className="text-3xl text-white">Todo Manager</h3>
-                <select value={filter} onChange={(e) => setFilter(e.target.value)} className="bg-rose-400">
+                <select value={filter} onChange={(e) => setFilter(e.target.value)} className="bg-rose-400 p-2">
                     <option value="all">All Todos</option>
                     <option value="completed">Completed Todos</option>
                     <option value="pending">Pending Todos</option>
                 </select>
+                <Button
+                    onClick={handleLogout}
+                    className="bg-red-500 hover:bg-red-600"
+                >
+                    Logout
+                </Button>
 
             </nav>
             <div className="flex text-xl text-center m-4" >
