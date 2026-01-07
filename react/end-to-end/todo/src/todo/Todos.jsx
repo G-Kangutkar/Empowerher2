@@ -66,7 +66,7 @@ function Todos({filterData}) {
                 {/* <Navbar/> */}
                 <aside className="bg-teal-200 w-90">
                    
-                         <div >
+                         <div className="space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto">
                             <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{filterData?.task}</h3>
                         </div> 
                     

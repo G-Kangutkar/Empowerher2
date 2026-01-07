@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import api from "./axiosInstance";
 
-function axiosService(){
+export default function axiosService(){
     const [data,setData]=useState([]);
 
     const getData=useCallback(async()=>{
@@ -76,4 +76,4 @@ function axiosService(){
     },[]);
     return {data, getData, addData,deleteData, updateData,toggle}
 }
-export default axiosService;
+// export default axiosService;

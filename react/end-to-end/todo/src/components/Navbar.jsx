@@ -1,10 +1,14 @@
 import Todos from "@/todo/Todos";
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import axiosService from "../services/todo.service";
 function Navbar() {
-    const {data}= axiosService();
+    const {data,getData}= axiosService();
 
     const todo=data || [];
+    useEffect(()=>{
+        getData();
+    },[])
+
 
     const [filter, setFilter] = useState('all')
     const filteredData = todo.filter(t => {

@@ -1,5 +1,5 @@
 import axios from 'axios'
 const api = axios.create({
-    baseURL:'https://todomanager-33435-default-rtdb.asia-southeast1.firebasedatabase.app'
+    baseURL:import.meta.env.VITE_FIREBASE_DATABASE_URL
 });
 export default api;
