@@ -69,7 +69,7 @@ function Todos() {
                         </div> 
                     
                 </aside> */}
-                <div className="grid grid-cols-1">
+                <div className="grid grid-cols-1 ml-90">
                     <div className="flex justify-center items-center text-center">
                         <div className='w-90  mb-9 bg-rose-500 p-5 m-3 text-white'>
                             <h2>Add Todos</h2><br />

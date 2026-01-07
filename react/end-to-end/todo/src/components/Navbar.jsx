@@ -30,16 +30,19 @@ function Navbar({ todos }) {
 
             </nav>
             <div className="flex text-xl text-center m-4" >
+                <aside className="bg-teal-200 w-90" >
                 {filteredData && filteredData.map(todo => ( 
-                    <aside className="bg-teal-200 w-90" key={todo.id}>
-                        <div >
+                    
+                        <div key={todo.id} >
                         <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-2">{todo.task}</h3>
 
                     </div>
-                    </aside>
+                   
                     
                 ))}
-
+                
+                    </aside>
+                            
             </div>
         </>
     )
