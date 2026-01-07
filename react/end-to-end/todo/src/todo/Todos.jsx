@@ -13,7 +13,7 @@ import axiosService from "@/services/todo.service"
 import TodoList from "./TodoList"
 import Navbar from "@/components/Navbar"
 
-function Todos() {
+function Todos({filterData}) {
     const [task, setTask] = useState('');
     const { data, getData, addData, deleteData, updateData, toggle } = axiosService();
     const [editId,setEditId]=useState(false);
@@ -59,17 +59,19 @@ function Todos() {
    
     return (
         <div >
-            <Navbar todos={data} />
+            
            
             <div className="flex text-xl text-center m-4">
-                {/* <aside className="bg-teal-200 w-90">
+
+                {/* <Navbar/> */}
+                <aside className="bg-teal-200 w-90">
                    
-                        {/* <div >
-                            <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{filterdata}</h3>
+                         <div >
+                            <h3 className="bg-rose-700 text-white gap-4 mb-5 w-80 text-center p-2 m-3">{filterData?.task}</h3>
                         </div> 
                     
-                </aside> */}
-                <div className="grid grid-cols-1 ml-90">
+                </aside>
+                <div className="grid grid-cols-1">
                     <div className="flex justify-center items-center text-center">
                         <div className='w-90  mb-9 bg-rose-500 p-5 m-3 text-white'>
                             <h2>Add Todos</h2><br />
