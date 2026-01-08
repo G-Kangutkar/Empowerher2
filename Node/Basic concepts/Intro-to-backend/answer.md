@@ -159,5 +159,23 @@ Tier-3:
 
 ## Javascript as a Backend language
 
+It is used to write code for backend logic that will work on server. It is possible by node js, which is a runtime environment that allows javascripts to run ouutside of browser.
+
+### Performance:
+
+Node JS runs on chrome V8 engine which is super fast.
+It is event-driven and non blocking I/O system that is good for heavy I/O applications.
+Single language for full stack applicatons.
+It gives fast deployment and it is easy to learn.
+
+### Ecosystem:
+
+It has huge ecosystem that is its node package manager.
+It has 2+ millions available packages .
+It can handle asynchronous multiple tasks and supports Json format.
+
+### Popular backend frameworks:
+
+Express JS, Next JS, Fastify JS, Koa JS. 
 
 
