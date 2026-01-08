@@ -108,3 +108,56 @@ Instagram server process that request =>
 - if yes then it fetches its data from database
 - sends it to client through the internet. 
 - client recivies the response 200 ok => displays it on app to user.
+
+## Three Tier Architecture
+
+It is a client-server software architecture that divides application in three logical layers.
+Which is Tier-1, Tier-2, Tier-3.
+
+Tier1: 
+
+- It is a presentation layer. 
+- Client side which displays the layout of website. i.e colors, buttons, forms, images, animations.
+- It requests the service from server and presents the response.
+- It includes user interface and user experience.
+- Technologies are HTML, CSS, React, Angular
+
+Tier-2:
+
+- It is a Application layer.
+- It is a backend or a business logic.
+- It takes requests from client process it and give backs the response.
+- It protects the sensitive data, Provides Authentications.
+- It applies business logic on client requests.
+- Technologies are Node js, Express
+
+Tier-3:
+
+- It is a data layer.
+- It is a database that stores and manages the data.
+- It performaces CRUD operations on data.
+- It provides data to application layer.
+- Technologies are MySQL, MONGO DB, AWS cloud.
+
+### Why It is Used:
+
+- The three tier architecture is a safe and secure for any application.
+- It is seperated from each other. Tier-1 cannot directly communicates with Tier-3.
+- If Tier-1 is failed it won't affect to other layers. so the application data stays safe.
+- If Tier-2 failed then it gets difficult to communicate between client and data server. but data in servers stays safe.
+- If Tier-3 fails the whole application crashes.
+- This architecture prvides Security so that applications data is safe from cyber attacks. 
+- Don't have to save all business logic at frontend that can be easily access by anyone.
+
+
+- Communication Flow:
+ * Tier-1 client makes request to Tier-2 i.e Backend.
+ * Tier-2 takes client request to the data server i.e Tier-3.
+ * Tier-3 gives response to Tier-2.
+ * Tier-2 takes that response and passes to Tier-1, Client displays it o to user.
+
+
+## Javascript as a Backend language
+
+
+
