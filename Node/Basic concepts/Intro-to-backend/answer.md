@@ -151,10 +151,15 @@ Tier-3:
 
 
 - Communication Flow:
- * Tier-1 client makes request to Tier-2 i.e Backend.
- * Tier-2 takes client request to the data server i.e Tier-3.
- * Tier-3 gives response to Tier-2.
- * Tier-2 takes that response and passes to Tier-1, Client displays it o to user.
+  
+  *Tier-1 client makes request to Tier-2 i.e Backend.*
+  
+  *Tier-2 takes client request to the data server i.e Tier-3.*
+  
+  *Tier-3 gives response to Tier-2.*
+  
+  *Tier-2 takes that response and passes to Tier-1, Client displays it o to user.*
+  
 
 
 ## Javascript as a Backend language
