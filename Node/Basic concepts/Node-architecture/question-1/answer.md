@@ -68,3 +68,51 @@ Javascript uses V8 engine of chrome which is super fast. It executes Javascript 
 - When thread completes the task it notifies the main thread.
 - We can change the thread pool ize.
 - When all 4 threads are busy that time other tasks get delayed.
+
+
+## Worker Threads:
+
+- Worker threads are pre-created threads that are use to perform blocking tasks.
+- There are 4 default worker threads.
+- Main threads assigns the blocking tasks to the worker threads.
+
+### why we need worker threads:
+
+- JS is a single thread language.
+- With the help of worker threads it act as multi thread language.
+- When JS has blocking tasks/ time consuming tasks it assigns to threads.
+- Threads perform the tasks and notifies the event loop.
+
+## Event loop queues:
+
+It continuously checks for task to execute. The tasks who needs for time are get assigns to event loop queue.
+
+### Micro Task Queue:
+
+It holds smaller *high priority* tasks that gets executed immediately after executing current task. It also called job queue.
+
+#### Examples:
+
+- Promise callbacks
+- queueMicrotask() callbacks
+- process.nextTrick()
+
+### Macro Task Queue:
+
+It holds tasks that are *low priority* and takes more time to executes. It also called Task queue.
+
+#### Examples:
+
+- setTimeout(), setInterval()
+- setImmediate()
+- I/O operations
+- UI rendering
+
+### Execution Priority:
+
+- Executes synchronous code.
+- Process all the microtasks from micro task queue.
+- Execute one macro task from macro task queue.
+- Again looks for any micro tasks that need to be process.
+- Perform rendring 
+- Executes other tasks from macro task queue, then looks for is any micro task needs to be executed or not and repeats the steps till macro task are done.
