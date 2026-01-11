@@ -15,17 +15,25 @@ app.get('/readfile',(req,res)=>{
 });
 
 app.get("/systemdetails",(req,res)=>{
-    const platform = os.platform();
+    try {
+        const platform = os.platform();
     const totalMemory = (os.totalmem()/(1024** 3)).toFixed(2);
     const freeMemory = (os.freemem()/(1024** 3)).toFixed(2);
     const cpuModel = os.cpus()[0].model;
+    const totalCPU = os.cpus().length;
 
     res.send({
         "platform" : platform,
         "totalMemory": totalMemory,
         "freeMemory": freeMemory,
-        "cpuModel":cpuModel
+        "cpuModel":cpuModel,
+        "totalCPU core":totalCPU
     });
+        
+    } catch (error) {
+        console.log(error.meassage)
+    }
+    
 });
 
 app.get('/getip',(req,res)=>{
