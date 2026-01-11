@@ -74,3 +74,42 @@ It says yes to all questions and skips those question and directly creates packa
 
 - Fast and auto process.
 - Uses default things.
+
+## Files and Folders Created After Project Initialization 
+
+### Package.json file
+
+- Package.json file is a configuration file that contains all important information about your project.
+- It is like blue-print of your project.
+- It contains version number, descriptions, list of all npm packages.
+- when ever you add new package the NPM auto updates package.json file.
+- It is lists what you need for project.
+- It is require file.
+
+### node_modules:
+
+- It is a library that contains all the packages code file.
+- Package.json downloads node_module after running the npm install command.
+- Every project has its own node_module depending on requirement of project.
+- It contains more than 50,000 files.
+
+### Package-lock.json
+
+- It is auto generated file tha records exact version of every package.
+- when you look version of any package in package.json file it will give approximately version, but package-lock.json will give you exact version of package.
+- It is recommended file but not require one.
+- records what exactly project installed.
+
+### Which file/folder should not be pushed to github
+
+- node_module: It has huge size in GBs cause having lots of files. pushing this file to github is more time consuming process.
+- .env: This file contains sensitive data like database passwords, api keys.
+
+###  Which file/folder should  be pushed to github
+
+- Package.json: It contains all the essential information about project.
+- Package-lock.json: It provides exact version of packages.
+- .gitignore: It excludes files that need not to be publish/pushed. e.g .env, node_modules.
+- Readme.md: This file explains your project.
+- all source files: The project that you build.
+
