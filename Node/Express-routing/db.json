@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "Kuro",
+      "age": 24
+    },
+    {
+      "id": 3,
+      "name": "Gru",
+      "age": 24
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "Read a Book",
+      "completed": "Pending"
+    }
+  ]
+}
