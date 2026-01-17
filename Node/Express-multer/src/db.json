@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "dru",
+      "email": "admin@gmail.com",
+      "password": "12345678",
+      "profilePic": "profile-1768638655087.jpg"
+    },
+    {
+      "id": 2,
+      "name": "gru",
+      "email": "test2@gmail.com",
+      "password": "12345678",
+      "profilePic": "https://res.cloudinary.com/di2ifb3c5/image/upload/v1768652343/user_profiles/vmqzxglugcgcjk39hw66.jpg"
+    },
+    {
+      "id": 3,
+      "name": "bit",
+      "email": "bruce@gmail.com",
+      "password": "bit1234",
+      "profilePic": "https://res.cloudinary.com/di2ifb3c5/image/upload/v1768673558/user_profiles/lahazcbr55cpbxcz6aeb.png"
+    }
+  ]
+}
