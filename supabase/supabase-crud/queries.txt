@@ -1,0 +1,224 @@
+creating table with entries:
+query:
+
+CREATE TABLE students(id SERIAL PRIMARY KEY, name TEXT, email TEXT, age INTEGER, course TEXT, created_at TIMESTAMP)
+insert into students (name,email,age,course,created_at) values('Gru','gru@gmail.com',23,'web development',now()),
+('Dru','Dru@gmail.com',23,'Backend development',now()),
+('Bit','bit@gmail.com',27,'.net developer',now()),
+('Kai','kai@gmail.com',28,'data science',now()),
+('Alex','alex@gmail.com',30,'mechanic engineering',now())
+
+insert into students (name,email,age,course,created_at) values('Bruce','bruce@gmail.com',17,'science',now()),
+('Kuro','kuro@gmail.com',18,'science',now()),
+('Alan','alan@gmail.com',22,'mechanic engineering',now()),
+('Paedyn','pea@gmail.com',20,'Backend development',now())
+
+Read data:
+
+-- Fetch all students
+query:
+select * from students
+
+answer:
+
+[
+  {
+    "id": 1,
+    "name": "Gru",
+    "email": "gru@gmail.com",
+    "age": 23,
+    "course": "web development",
+    "created_at": "2026-01-19 17:56:28.271682"
+  },
+  {
+    "id": 2,
+    "name": "Dru",
+    "email": "Dru@gmail.com",
+    "age": 23,
+    "course": "Backend development",
+    "created_at": "2026-01-19 17:56:28.271682"
+  },
+  {
+    "id": 3,
+    "name": "Bit",
+    "email": "bit@gmail.com",
+    "age": 27,
+    "course": ".net developer",
+    "created_at": "2026-01-19 17:56:28.271682"
+  },
+  {
+    "id": 4,
+    "name": "Kai",
+    "email": "kai@gmail.com",
+    "age": 28,
+    "course": "data science",
+    "created_at": "2026-01-19 17:56:28.271682"
+  },
+  {
+    "id": 5,
+    "name": "Alex",
+    "email": "alex@gmail.com",
+    "age": 30,
+    "course": "mechanic engineering",
+    "created_at": "2026-01-19 17:56:28.271682"
+  },
+  {
+    "id": 6,
+    "name": "Bruce",
+    "email": "bruce@gmail.com",
+    "age": 17,
+    "course": "science",
+    "created_at": "2026-01-19 18:00:47.060588"
+  },
+  {
+    "id": 7,
+    "name": "Kuro",
+    "email": "kuro@gmail.com",
+    "age": 18,
+    "course": "science",
+    "created_at": "2026-01-19 18:00:47.060588"
+  },
+  {
+    "id": 8,
+    "name": "Alan",
+    "email": "alan@gmail.com",
+    "age": 22,
+    "course": "mechanic engineering",
+    "created_at": "2026-01-19 18:00:47.060588"
+  },
+  {
+    "id": 9,
+    "name": "Paedyn",
+    "email": "pea@gmail.com",
+    "age": 20,
+    "course": "Backend development",
+    "created_at": "2026-01-19 18:00:47.060588"
+  }
+]
+
+
+| id | name   | email           | age | course               | created_at                 |
+| -- | ------ | --------------- | --- | -------------------- | -------------------------- |
+| 1  | Gru    | gru@gmail.com   | 23  | web development      | 2026-01-19 17:56:28.271682 |
+| 2  | Dru    | Dru@gmail.com   | 23  | Backend development  | 2026-01-19 17:56:28.271682 |
+| 3  | Bit    | bit@gmail.com   | 27  | .net developer       | 2026-01-19 17:56:28.271682 |
+| 4  | Kai    | kai@gmail.com   | 28  | data science         | 2026-01-19 17:56:28.271682 |
+| 5  | Alex   | alex@gmail.com  | 30  | mechanic engineering | 2026-01-19 17:56:28.271682 |
+| 6  | Bruce  | bruce@gmail.com | 17  | science              | 2026-01-19 18:00:47.060588 |
+| 7  | Kuro   | kuro@gmail.com  | 18  | science              | 2026-01-19 18:00:47.060588 |
+| 8  | Alan   | alan@gmail.com  | 22  | mechanic engineering | 2026-01-19 18:00:47.060588 |
+| 9  | Paedyn | pea@gmail.com   | 20  | Backend development  | 2026-01-19 18:00:47.060588 |
+
+Fetch students older than 20
+
+query:
+select * from students where age >20
+
+answer:
+
+| id | name | email          | age | course               | created_at                 |
+| -- | ---- | -------------- | --- | -------------------- | -------------------------- |
+| 1  | Gru  | gru@gmail.com  | 23  | web development      | 2026-01-19 17:56:28.271682 |
+| 2  | Dru  | Dru@gmail.com  | 23  | Backend development  | 2026-01-19 17:56:28.271682 |
+| 3  | Bit  | bit@gmail.com  | 27  | .net developer       | 2026-01-19 17:56:28.271682 |
+| 4  | Kai  | kai@gmail.com  | 28  | data science         | 2026-01-19 17:56:28.271682 |
+| 5  | Alex | alex@gmail.com | 30  | mechanic engineering | 2026-01-19 17:56:28.271682 |
+| 8  | Alan | alan@gmail.com | 22  | mechanic engineering | 2026-01-19 18:00:47.060588 |
+
+Fetch only name and email columns:
+
+query:
+select name,email from students 
+
+answer:
+
+| name   | email           |
+| ------ | --------------- |
+| Gru    | gru@gmail.com   |
+| Dru    | Dru@gmail.com   |
+| Bit    | bit@gmail.com   |
+| Kai    | kai@gmail.com   |
+| Alex   | alex@gmail.com  |
+| Bruce  | bruce@gmail.com |
+| Kuro   | kuro@gmail.com  |
+| Alan   | alan@gmail.com  |
+| Paedyn | pea@gmail.com   |
+
+Fetch students enrolled in a specific course
+
+query:
+select * from students where course = 'Backend development'
+
+answer:
+
+| id | name   | email         | age | course              | created_at                 |
+| -- | ------ | ------------- | --- | ------------------- | -------------------------- |
+| 2  | Dru    | Dru@gmail.com | 23  | Backend development | 2026-01-19 17:56:28.271682 |
+| 9  | Paedyn | pea@gmail.com | 20  | Backend development | 2026-01-19 18:00:47.060588 |
+
+Update data:
+
+query:
+Update the age of one student
+
+update students set age = 24 where name='Alan'
+select * from students where name ='Alan'
+
+answer:
+
+| id | name | email          | age | course               | created_at                 |
+| -- | ---- | -------------- | --- | -------------------- | -------------------------- |
+| 8  | Alan | alan@gmail.com | 24  | mechanic engineering | 2026-01-19 18:00:47.060588 |
+
+
+Update the course for all students enrolled in one course
+
+query:
+update students set course = 'English literature' where course ='mechanic engineering'
+select * from students where course ='English literature'
+
+answer:
+
+| id | name | email          | age | course             | created_at                 |
+| -- | ---- | -------------- | --- | ------------------ | -------------------------- |
+| 5  | Alex | alex@gmail.com | 30  | English literature | 2026-01-19 17:56:28.271682 |
+| 8  | Alan | alan@gmail.com | 24  | English literature | 2026-01-19 18:00:47.060588 |
+
+Delete data:
+
+query:
+Delete one student using id
+
+delete from students where id=4 
+select * from students order by id
+
+answer:
+
+| id | name   | email           | age | course              | created_at                 |
+| -- | ------ | --------------- | --- | ------------------- | -------------------------- |
+| 1  | Gru    | gru@gmail.com   | 23  | web development     | 2026-01-19 17:56:28.271682 |
+| 2  | Dru    | Dru@gmail.com   | 24  | Backend development | 2026-01-19 17:56:28.271682 |
+| 3  | Bit    | bit@gmail.com   | 24  | .net developer      | 2026-01-19 17:56:28.271682 |
+| 5  | Alex   | alex@gmail.com  | 30  | English literature  | 2026-01-19 17:56:28.271682 |
+| 6  | Bruce  | bruce@gmail.com | 17  | science             | 2026-01-19 18:00:47.060588 |
+| 7  | Kuro   | kuro@gmail.com  | 18  | science             | 2026-01-19 18:00:47.060588 |
+| 8  | Alan   | alan@gmail.com  | 24  | English literature  | 2026-01-19 18:00:47.060588 |
+| 9  | Paedyn | pea@gmail.com   | 20  | Backend development | 2026-01-19 18:00:47.060588 |
+
+
+
+Delete all students below a certain age
+
+query:
+delete from students where age <=20
+select * from students order by age
+
+answer:
+
+| id | name | email          | age | course              | created_at                 |
+| -- | ---- | -------------- | --- | ------------------- | -------------------------- |
+| 1  | Gru  | gru@gmail.com  | 23  | web development     | 2026-01-19 17:56:28.271682 |
+| 2  | Dru  | Dru@gmail.com  | 24  | Backend development | 2026-01-19 17:56:28.271682 |
+| 3  | Bit  | bit@gmail.com  | 24  | .net developer      | 2026-01-19 17:56:28.271682 |
+| 8  | Alan | alan@gmail.com | 24  | English literature  | 2026-01-19 18:00:47.060588 |
+| 5  | Alex | alex@gmail.com | 30  | English literature  | 2026-01-19 17:56:28.271682 |
