@@ -65,4 +65,72 @@ Two types of database:
 
 ### Relational Database:
 
+- Realtional database is a database that orgnize its data into table with rows and columns format. tables and linked together through keys.
+- Table are predefined with fixed numbers of columns with their speific data type.
+- Schema is defined before inserting any data.
+- It provides ACID properties, 
+
+Atomicity: Transcation either complete fully or not at all.
+
+Consistency: data follows all defined rules and constraints.
+
+Isolation: Concurrent transcaton don't interfere.
+
+Durability: Saved data is persists even after it crashes.
+
+#### Popular database:
+PostgreSQL, MySQL, Oracle, SQLite.
+
+#### Example:
+- E-commerce platform Amazon:
+We use relational database because it has complex relationship between users, products,orders,payments,shippments.
+
+Imagine you have a huge toy shop that runs by one strict superhero having some powers. It need to be strict so that your order toy will not taken by other kid. 
+
+when you buy one toy for example you buy remote control car, that strict superhero check in entire shop for your toy lable it as your name. so that if any other kid buys same car your car is safe for you. Superhero acts as your bodyguard so no one takes your toy while you doing other things. it calls Isolation power.
+
+It will give you your car and take the money from you only if you make your payment successfully other wise it erase all things like it never happened. so if payment fails you don't have to worry about that your money will get deducted. It is called Atomicity power.
+
+If there is only one toy, and both person try to buy at same time the strict superhero only gives that to one kid and tells other kid that it is sold so he can buy other toy and not wait for the same toy which he will not recieved at all. It calls Consistency power that follows all rules like can't sale more than stock.
+
+Durability power it remembers your order even when system crashed.
+
+### Non-Relational Database:
+
+- NoSQL don't use tables with fixed schemas. They are designed for flexibility so that it will handle any data structure.
+- Types of NoSQL: 
+
+Document database: stores JSON-like documents. no predefine schema.
+
+Key-value stores: data stores in key-value pairs.
+
+Column-family stores: data orgnaized by columns rather than row.
+
+Graph database: stores relationship as first-class entities.
+
+- You can add new fields without altering entire database.
+- can add servers to handle more load.
+- data often duplicated across documents so it reduce needs for joins.
+
+#### Popular database:
+MongoDB, Redis, Cassandra, DynamoDB.
+
+#### Example
+
+- Social Media Platform Instagram:
+
+We use non-relational database because the data structure is not fixed. 
+
+In social media platform the data can be any format picture, videos, text, picture with text, polls. so we need database which is not having fixed structure.
+
+If we use relational database more rows may left null because the data is changing and db has it's fixed size of table, so it is not good option.
+
+Instagram uses three types of database to process hence it runs smoothly even it has millions of users. 
+All databases are NoSQL type.
+
+In this typpe of database we can add new features without re-writting whole database.
+
+
+
+
 
