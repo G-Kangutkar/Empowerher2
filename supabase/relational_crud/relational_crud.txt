@@ -1,0 +1,191 @@
+SQL CRUD Operations on Relationships
+
+create table:
+
+create table users(user_id serial primary key, name text not null, email text not null,  created_at timestamp )
+create table orders(id serial primary key, user_id int, is_amount int, status text, created_at timestamp, foreign key(user_id) references users(user_id) )
+
+--insert data :
+
+insert into users(name,email,created_at) values('Bruce','bruce@gmail.com',now()),
+('Alex','alex@gmail.com',now()),
+('Yuji','yuji@gmail.com',now()),
+('Geto','geto@gmail.com',now()),
+('Gojo','gojo@gmail.com',now()),
+('Yuta','yuta@gmail.com',now())
+
+insert into orders(user_id,is_amount,status,created_at) values(2,3000,'placed',now()),
+(3,5000,'placed',now()),
+(1,7000,'placed',now()),
+(2,2300,'placed',now()),
+(5,3000,'placed',now()),
+(4,500,'placed',now()),
+(4,3000,'placed',now()),
+(2,300,'placed',now()),
+(6,2000,'placed',now())
+
+
+Read Data (Relational Reads)
+Write SQL queries to:
+
+Fetch all users:
+Query:
+
+select * from users
+
+Output:
+
+| user_id | name  | email           | created_at                 |
+| ------- | ----- | --------------- | -------------------------- |
+| 1       | Bruce | bruce@gmail.com | 2026-01-22 16:55:21.649152 |
+| 2       | Alex  | alex@gmail.com  | 2026-01-22 16:55:21.649152 |
+| 3       | Yuji  | yuji@gmail.com  | 2026-01-22 16:55:21.649152 |
+| 4       | Geto  | geto@gmail.com  | 2026-01-22 16:55:21.649152 |
+| 5       | Gojo  | gojo@gmail.com  | 2026-01-22 16:55:21.649152 |
+| 6       | Yuta  | yuta@gmail.com  | 2026-01-22 16:55:21.649152 |
+
+
+Fetch all orders:
+Query:
+
+select * from orders
+
+Output:
+
+| id | user_id | is_amount | status | created_at                 |
+| -- | ------- | --------- | ------ | -------------------------- |
+| 1  | 2       | 3000      | placed | 2026-01-22 16:59:50.660127 |
+| 2  | 3       | 5000      | placed | 2026-01-22 16:59:50.660127 |
+| 3  | 1       | 7000      | placed | 2026-01-22 16:59:50.660127 |
+| 4  | 2       | 2300      | placed | 2026-01-22 16:59:50.660127 |
+| 5  | 5       | 3000      | placed | 2026-01-22 16:59:50.660127 |
+| 6  | 4       | 500       | placed | 2026-01-22 16:59:50.660127 |
+| 7  | 4       | 3000      | placed | 2026-01-22 16:59:50.660127 |
+| 8  | 2       | 300       | placed | 2026-01-22 16:59:50.660127 |
+| 9  | 6       | 2000      | placed | 2026-01-22 16:59:50.660127 |
+
+
+Fetch all orders for a specific user:
+Query:
+
+select * from orders where user_id=2
+
+Output:
+
+| id | user_id | is_amount | status | created_at                 |
+| -- | ------- | --------- | ------ | -------------------------- |
+| 1  | 2       | 3000      | placed | 2026-01-22 16:59:50.660127 |
+| 4  | 2       | 2300      | placed | 2026-01-22 16:59:50.660127 |
+| 8  | 2       | 300       | placed | 2026-01-22 16:59:50.660127 |
+
+
+Fetch users who have more than one order:
+Query:
+
+select users.name, users.email,orders.order_count 
+from users 
+join(select user_id,count(id) as order_count
+from orders 
+group by user_id having count(id) >1)
+orders on users.user_id = orders.user_id
+
+Output:
+
+| name | email          | order_count |
+| ---- | -------------- | ----------- |
+| Alex | alex@gmail.com | 3           |
+| Geto | geto@gmail.com | 2           |
+
+
+Fetch total order amount per user:
+Query:
+
+select users.user_id,users.name, sum(orders.is_amount) as total_amount from users 
+join orders on users.user_id = orders.user_id 
+group by users.user_id, users.name
+order by total_amount desc
+
+Output:
+
+| user_id | name  | total_amount |
+| ------- | ----- | ------------ |
+| 1       | Bruce | 7000         |
+| 2       | Alex  | 5600         |
+| 3       | Yuji  | 5000         |
+| 4       | Geto  | 3500         |
+| 5       | Gojo  | 3000         |
+| 6       | Yuta  | 2000         |
+
+
+
+Update Data:
+
+Update the email of one user
+Query:
+
+update users set email='batman@gmail.com' where user_id=1
+select * from users
+
+Output:
+
+| user_id | name  | email            | created_at                 |
+| ------- | ----- | ---------------- | -------------------------- |
+| 2       | Alex  | alex@gmail.com   | 2026-01-22 16:55:21.649152 |
+| 3       | Yuji  | yuji@gmail.com   | 2026-01-22 16:55:21.649152 |
+| 4       | Geto  | geto@gmail.com   | 2026-01-22 16:55:21.649152 |
+| 5       | Gojo  | gojo@gmail.com   | 2026-01-22 16:55:21.649152 |
+| 6       | Yuta  | yuta@gmail.com   | 2026-01-22 16:55:21.649152 |
+| 1       | Bruce | batman@gmail.com | 2026-01-22 16:55:21.649152 |  <==
+
+
+Update the status of all orders for a specific user
+Query:
+
+update orders set status='shipped' where user_id=4
+select * from orders where user_id=4
+
+Output:
+
+| id | user_id | is_amount | status  | created_at                 |
+| -- | ------- | --------- | ------- | -------------------------- |
+| 6  | 4       | 500       | shipped | 2026-01-22 16:59:50.660127 |
+| 7  | 4       | 3000      | shipped | 2026-01-22 16:59:50.660127 |
+
+
+Update order amount for a single order
+Query:
+
+update orders set is_amount=2500 where user_id =5 
+select * from orders
+
+Output:
+
+| id | user_id | is_amount | status  | created_at                 |
+| -- | ------- | --------- | ------- | -------------------------- |
+| 1  | 2       | 3000      | placed  | 2026-01-22 16:59:50.660127 |
+| 2  | 3       | 5000      | placed  | 2026-01-22 16:59:50.660127 |
+| 3  | 1       | 7000      | placed  | 2026-01-22 16:59:50.660127 |
+| 4  | 2       | 2300      | placed  | 2026-01-22 16:59:50.660127 |
+| 8  | 2       | 300       | placed  | 2026-01-22 16:59:50.660127 |
+| 9  | 6       | 2000      | placed  | 2026-01-22 16:59:50.660127 |
+| 6  | 4       | 500       | shipped | 2026-01-22 16:59:50.660127 |
+| 7  | 4       | 3000      | shipped | 2026-01-22 16:59:50.660127 |
+| 5  | 5       | 2500      | placed  | 2026-01-22 16:59:50.660127 |  <==
+
+
+Delete Data:
+
+Delete one order using order id
+
+Query:
+Output:
+
+Delete all orders of a specific user
+
+Query:
+Output:
+
+Attempt deleting a user with existing orders and observe the behavior
+
+Query:
+Output:
