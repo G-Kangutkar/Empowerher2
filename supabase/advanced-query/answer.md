@@ -1,9 +1,14 @@
 # Database Relationships
 
+Database Relationship defines how data in one table is connected to data in other table.
+
+Why it is needed:
 Storing eveything in one table leads to duplicate data, more null values, difficult in update, poor performances. Hence
 we need multiple tables to make the updation easy, scale up the performance, no duplication of data. 
 
+
 The multiple table should be connected to each other so that can you use it, Hence it requires some relationships with each other. 
+
 
 ## There are three types of relationships
 
@@ -24,4 +29,8 @@ The multiple table should be connected to each other so that can you use it, Hen
 - One author is related to many books from books table.
 
 ### Many to Many:
-- 
+- In one to many (M:M) or(N:M) relationship the many row of table-A is connected to many rows of tables-B.
+- Many record in table-A is related to many records of table-B.
+
+#### Example:
+- In E-commerce products can have many categories and category can have many products.
