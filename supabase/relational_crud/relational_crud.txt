@@ -232,3 +232,9 @@ It showing this error because this user's id is still using as reference in orde
 
 
 -- Why should orders not be stored inside the users table?
+Because what if one users has 100 orders it will increase the size on tables causing poor performance
+It will cause problem when you need to update any one order, you have to update entire database.
+storage space is getting wasted by adding repeated user data.
+Storing order inside user table will make the maintenance nightmare for us.
+
+That's why we need to store orders and users in separate tables. 
