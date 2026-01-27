@@ -12,7 +12,7 @@ export const sigupUser = async(req,res)=>{
          if(!name || !email|| !password ){
             return res.status(400).json({error:'Something is missing!'})
         }
-        if(data === 'email'){
+        if(data){
             return res.status(409).json({error:'Email already exists'})
         }
         const {data: addUser, error:newError } = await supabase
