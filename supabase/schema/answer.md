@@ -56,3 +56,22 @@ example, name cannot be null or email should be unique.
 
 ## The difference between a database schema and a database table:
 
+### Database schema :
+
+
+- It is a blueprint of database.
+- It is a entire database structure, more than one entity.
+- It containts tables,relationships,constraints, indexes.
+- It is as a architecture plan.
+
+### Database table:
+
+
+- It is container of data.
+- It is one entity's data.
+- It contains rows and columns.
+- It is as a single room in building.
+
+## Why a table should represent only one entity:
+
+- 
