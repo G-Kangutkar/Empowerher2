@@ -76,3 +76,25 @@ export const updateUser = async(req,res)=>{
         res.status(500).json({error:error.message})
     }
 }
+
+export const deleteUser = async(req,res)=>{
+    try {
+        const {userId} = req.params;
+        const {data,error}= await supabase
+        .from("userss")
+        .delete()
+        .eq('id',userId)
+        .select()
+
+        if(error){
+            return res.status(400).json({error:error.message})
+        }
+        res.status(200).json({
+            success:true,
+            message:"User deleted successfully",
+            data:data
+        })
+    } catch (error) {
+        res.status(500).json({error:error.message})
+    }
+}

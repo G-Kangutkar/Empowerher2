@@ -52,6 +52,7 @@ export const checkUserId = async(req,res,next)=>{
         return res.status(400).json({error:error.message})
     }
     next()
+    
 } catch (error) {
     return res.status(500).json({error:error.message})
 }
