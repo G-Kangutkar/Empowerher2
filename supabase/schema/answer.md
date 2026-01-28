@@ -74,4 +74,35 @@ example, name cannot be null or email should be unique.
 
 ## Why a table should represent only one entity:
 
-- 
+- Separate tables for evey entity makes storing, retriving, updating and deleting data easy.
+- It gives clarity and consistency about the database.
+- If you combine two tables with each other it will cause duplication data, hard to update single data
+
+for example, If students and courses tables combine with each other it will havw multiple duplicate data cause any stuents can have multiple courses or vice versa.
+
+If you want to update any course data you have to change multiple rows also.
+
+
+## Why redundant or derived data should be avoided in table design:
+
+- Avoiding redundant or derived data keeps your system clean and reliable.
+- If data is duplicated in multiple places then updation of that data may or maynot be done in all places.
+- Redundant data consumes unnecessary space.
+- With no redundant data the maintenace of database becomes easy.
+
+
+## The importance of choosing correct data types while designing tables:
+
+- We should choose correct datatype before designing the tables,because It provides clean and correct structure for project.
+- It will store only correct and valid data.
+
+for example, When you want only boolean value we can define data type as boolean rather than text so it will only store true or false value.
+
+
+- By defining correct data type can saves disk space.
+
+for example, smaller value like name required small space hence we should use varchar(50) instead of giving text as data type.
+
+- Choosing types accordingly its growth can avoid redesign the data structure in later. 
+ 
+for example, using bigint for ids which going to be grow in millions records, rather than using only int. 
