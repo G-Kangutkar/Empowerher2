@@ -1,4 +1,4 @@
-function runSequential(tasks,delay){
+function runSequential(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{
             if(tasks){
@@ -7,7 +7,7 @@ function runSequential(tasks,delay){
             else{
                 reject("task failed")
             }
-        },delay)
+        },2000)
     })
 }
 async function getTask(){
